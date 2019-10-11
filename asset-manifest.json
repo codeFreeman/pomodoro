@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/codeFreeman/static/css/main.b100e6da.chunk.css",
+    "main.js": "/codeFreeman/static/js/main.7a51d023.chunk.js",
+    "main.js.map": "/codeFreeman/static/js/main.7a51d023.chunk.js.map",
+    "runtime-main.js": "/codeFreeman/static/js/runtime-main.6732dbad.js",
+    "runtime-main.js.map": "/codeFreeman/static/js/runtime-main.6732dbad.js.map",
+    "static/js/2.31f72f36.chunk.js": "/codeFreeman/static/js/2.31f72f36.chunk.js",
+    "static/js/2.31f72f36.chunk.js.map": "/codeFreeman/static/js/2.31f72f36.chunk.js.map",
+    "index.html": "/codeFreeman/index.html",
+    "precache-manifest.0efb815fe164908651dc6035b4c3f31f.js": "/codeFreeman/precache-manifest.0efb815fe164908651dc6035b4c3f31f.js",
+    "service-worker.js": "/codeFreeman/service-worker.js",
+    "static/css/main.b100e6da.chunk.css.map": "/codeFreeman/static/css/main.b100e6da.chunk.css.map",
+    "static/media/logo.svg": "/codeFreeman/static/media/logo.25bf045c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6732dbad.js",
+    "static/js/2.31f72f36.chunk.js",
+    "static/css/main.b100e6da.chunk.css",
+    "static/js/main.7a51d023.chunk.js"
+  ]
+}
