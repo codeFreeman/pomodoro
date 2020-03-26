@@ -1,7 +1,34 @@
 import React from "react";
+import { Box } from "@material-ui/core";
+import { CssBaseline } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
+
+import Todolist from "./Todolists/Todolist";
+import ControlTabs from "./Control/ControlTabs";
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1
+  }
+}));
 
 const App = () => {
-  return <div>Pomodoro</div>;
+  const classes = useStyles();
+  return (
+    <Box className={classes.root} width="100vw" height="100vh">
+      <CssBaseline />
+      <Grid container spacing={0} style={{ height: "100%" }}>
+        <Grid item xs={8}>
+          <Todolist />
+        </Grid>
+        <Grid item xs={4}>
+          <ControlTabs />
+        </Grid>
+      </Grid>
+    </Box>
+  );
 };
 
 export default App;
