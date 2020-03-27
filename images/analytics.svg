@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #FFFFFF;">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>analytics</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="80" height="80"></rect>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#A5C699" offset="0%"></stop>
+            <stop stop-color="#6C9460" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#F9BA7E" offset="0%"></stop>
+            <stop stop-color="#F08448" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-2048.000000, -339.000000)">
+            <g id="analytics" transform="translate(2048.000000, 339.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Rectangle-path"></g>
+                <g id="icon-analysis" mask="url(#mask-2)">
+                    <g transform="translate(22.000000, 25.000000)" id="Group_211">
+                        <g>
+                            <rect id="Rectangle-path" fill="url(#linearGradient-3)" fill-rule="nonzero" x="0" y="26" width="36" height="4"></rect>
+                            <polygon id="Path" fill="url(#linearGradient-4)" fill-rule="nonzero" points="4 11 8 11 8 26 4 26"></polygon>
+                            <polygon id="Path-2" fill="url(#linearGradient-4)" fill-rule="nonzero" points="12 16 16 16 16 26 12 26"></polygon>
+                            <polygon id="Path-3" fill="url(#linearGradient-4)" fill-rule="nonzero" points="20 7 24 7 24 26 20 26"></polygon>
+                            <polygon id="Path-4" fill="url(#linearGradient-4)" fill-rule="nonzero" points="28 0 32 0 32 26 28 26"></polygon>
+                            <rect id="Rectangle_38" fill="url(#linearGradient-3)" fill-rule="nonzero" x="4" y="11" width="4" height="4"></rect>
+                            <rect id="Rectangle_39" fill="url(#linearGradient-3)" fill-rule="nonzero" x="12" y="16" width="4" height="4"></rect>
+                            <rect id="Rectangle_40" fill="url(#linearGradient-3)" fill-rule="nonzero" x="20" y="7" width="4" height="4"></rect>
+                            <rect id="Rectangle_41" fill="url(#linearGradient-3)" fill-rule="nonzero" x="28" y="0" width="4" height="4"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

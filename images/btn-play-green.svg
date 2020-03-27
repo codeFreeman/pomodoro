@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #FFFFFF;">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>btn-play-green</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#A5C699" offset="0%"></stop>
+            <stop stop-color="#6C9460" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-2364.000000, -146.000000)">
+            <g id="btn-play-green" transform="translate(2364.000000, 146.000000)">
+                <circle id="Oval-2" fill="#FFFFFF" cx="32" cy="32" r="32"></circle>
+                <path d="M30.7483731,23.5233731 C31.1044551,22.9002096 31.7671495,22.5156269 32.4848731,22.5156269 C33.2025966,22.5156269 33.8652911,22.9002096 34.2213731,23.5233731 L42.7743731,38.4923731 C43.1279062,39.1112858 43.1253373,39.8715766 42.7676298,40.4880862 C42.4099224,41.1045958 41.7511414,41.4841432 41.0383731,41.4843731 L23.9303731,41.4843731 C23.2176048,41.4841432 22.5588237,41.1045958 22.2011163,40.4880862 C21.8434088,39.8715766 21.8408399,39.1112858 22.1943731,38.4923731 L30.7483731,23.5233731 Z" id="Polygon_1" fill="url(#linearGradient-1)" fill-rule="nonzero" transform="translate(32.484373, 32.000000) rotate(90.000000) translate(-32.484373, -32.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

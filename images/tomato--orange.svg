@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="990px" height="315px" viewBox="0 0 990 315" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #FFFFFF;">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>tomato--orange</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="1000" height="316"></rect>
+        <circle id="path-3" cx="600" cy="600" r="600"></circle>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-5.000000, -1.000000)">
+            <g id="tomato--orange">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask"></g>
+                <g mask="url(#mask-2)" id="Mask_Group_17-Clipped">
+                    <g transform="translate(-180.000000, 16.000000)">
+                        <g>
+                            <g id="Mask_Group_17">
+                                <g id="tomato">
+                                    <circle id="Ellipse_95" fill="#E4793E" fill-rule="nonzero" cx="680" cy="640" r="600"></circle>
+                                    <g id="Mask_Group_16-Clipped" transform="translate(0.000000, 15.000000)">
+                                        <mask id="mask-4" fill="white">
+                                            <use xlink:href="#path-3"></use>
+                                        </mask>
+                                        <g id="Ellipse_97"></g>
+                                        <g id="Mask_Group_16" mask="url(#mask-4)" fill="#F08448" fill-rule="nonzero">
+                                            <g transform="translate(174.000000, 45.000000)" id="Ellipse_96">
+                                                <circle cx="552.5" cy="552.5" r="552.5"></circle>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <path d="M560,196.5 L560,231.5" id="Line_54" stroke="#FFFFFF" stroke-width="30" stroke-linecap="round"></path>
+                                    <path d="M800,196.5 L800,231.5" id="Line_55" stroke="#FFFFFF" stroke-width="30" stroke-linecap="round"></path>
+                                    <path d="M656.5,254 L704.5,254" id="Line_56" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"></path>
+                                    <path d="M617.230847,53.1222178 L743.189847,46.6802178" id="Line_57" stroke="#6C9460" stroke-width="40" stroke-linecap="round" transform="translate(680.210347, 49.901218) rotate(30.000000) translate(-680.210347, -49.901218) "></path>
+                                    <path d="M617.231153,46.6792822 L743.190153,53.1212822" id="Line_58" stroke="#6C9460" stroke-width="40" stroke-linecap="round" transform="translate(680.210653, 49.900282) rotate(150.000000) translate(-680.210653, -49.900282) "></path>
+                                    <ellipse id="Ellipse_98" fill="#FFFFFF" fill-rule="nonzero" opacity="0.16" transform="translate(847.999728, 110.500001) rotate(16.000000) translate(-847.999728, -110.500001) " cx="847.999728" cy="110.500001" rx="23" ry="18.5"></ellipse>
+                                    <path d="M680,0.5 L680,40.5" id="Line_59" stroke="#5C8051" stroke-width="30" stroke-linecap="round"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
