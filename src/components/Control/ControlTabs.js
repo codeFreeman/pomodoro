@@ -1,11 +1,20 @@
 import React from "react";
-import { Box } from "@material-ui/core";
+import Tabs from "./Tabs";
+import { ControlTabsWrapper } from "./styled_control";
 
 const ControlTabs = () => {
+  const settings = [
+    "../../../images/add_red.svg",
+    "tasklist",
+    "analytics",
+    "ringtone"
+  ];
   return (
-    <Box height="100%" bgcolor="#003164">
-      ControlTabs
-    </Box>
+    <ControlTabsWrapper width="80px">
+      {settings.map(set => (
+        <Tabs key={set} icon={set} />
+      ))}
+    </ControlTabsWrapper>
   );
 };
 
