@@ -1,14 +1,20 @@
 import React from "react";
 import ReactEcharts from "echarts-for-react";
+import echarts from "echarts";
+import getOption from "./getOption";
 
 const Charts = () => {
+  echarts.registerTheme("my_theme", {
+    color: "#fff"
+  });
   return (
     <ReactEcharts
-      option={this.getOption()}
+      option={getOption}
       notMerge={true}
       lazyUpdate={true}
-      // theme={"theme_name"}
-      onChartReady={this.onChartReadyCallback}
+      style={{ height: "350px", width: "100%" }}
+      theme="my_theme"
+      // onChartReady={this.onChartReadyCallback}
       // onEvents={EventsDict}
       // opts={}
     />

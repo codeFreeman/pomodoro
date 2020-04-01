@@ -62,7 +62,7 @@ export const ToggleIcon = styled.div`
   }
 `;
 
-export const TomatoSelect = styled.div`
+export const TomatoSelectWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -118,6 +118,16 @@ export const TomatoTab = styled(Link)`
   text-align: center;
   color: #acacac;
   text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  font-family: Lato;
+  font-weight: bolder;
+  ${({ isactive }) =>
+    isactive === "true" &&
+    `
+      background-color: #EA5548;
+      color:#fff;
+  `}
 `;
 
 export const TaskWrapper = styled(Box)`
@@ -170,4 +180,46 @@ export const TaskEditWrapper = styled(Box)`
     width: calc(100% - 80px);
     height: 1px;
   }
+`;
+
+export const RingtoneListWrapper = styled.li`
+  width: 100%;
+  height: 50px;
+  background-color: #414141;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 2px;
+  border-bottom: 1px solid #333333;
+`;
+
+export const RingtoneListRadio = styled.div`
+  width: 40px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  line-height: 19px;
+  font-family: "Lato";
+`;
+export const RingtoneListTitle = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1 0 auto;
+  color: #fcfcfc;
+`;
+
+export const RingtoneListIcon = styled.div`
+  width: 40px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
 `;

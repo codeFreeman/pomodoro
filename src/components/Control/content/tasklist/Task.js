@@ -11,22 +11,22 @@ import {
 const tomatoSmallColor =
   process.env.PUBLIC_URL + "/images/tomato_small_color.svg";
 
-const Task = () => {
+const Task = ({ id, taskTitle, taskRound }) => {
   return (
     <>
       <TaskWrapper width="100%" height="50px" bgcolor="#414141">
         <TaskActive>
           <img src={tomatoSmallColor} alt="" />
         </TaskActive>
-        <TaskContent>
-          <div>My First Task</div>
-          <div>4</div>
+        <TaskContent id={id}>
+          <div>{taskTitle}</div>
+          <div>{taskRound}</div>
         </TaskContent>
         <TaskToggleSetting>
           <FontAwesomeIcon icon={faEllipsisV} />
         </TaskToggleSetting>
       </TaskWrapper>
-      <TaskEdit />
+      <TaskEdit id={id} taskTitle={taskTitle} taskRound={taskRound} />
     </>
   );
 };

@@ -40,7 +40,6 @@ const Control = () => {
     },
     {
       path: "/analytics",
-
       icon: faChartBar
     },
     {
@@ -63,6 +62,9 @@ const Control = () => {
       </ControlTabsWrapper>
       <ControlContentWrapper width="calc(100% - 80px)">
         <Switch>
+          <Route exact path="/">
+            <Add />
+          </Route>
           <Route path="/add">
             <Add />
           </Route>
