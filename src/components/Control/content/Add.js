@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { TextField, Box } from "@material-ui/core";
 import ControlTitle from "./ControlTitle";
+import TomatoInput from "./add/TomatoInput";
 import { TomatoBotton } from "../styled_control";
 import TomatoSelect from "./add/TomatoSelect";
 import { useHistory } from "react-router-dom";
@@ -40,28 +40,21 @@ const Add = () => {
   return (
     <div>
       <ControlTitle title="ADD NEW TASK" />
-      <Box marginBottom="24px">
-        <div style={{ marginBottom: "8px" }}>TASK TITLE</div>
-        <TextField
-          id="taskTitle"
-          placeholder="add your new task"
-          variant="filled"
-          fullWidth
-          style={{ backgroundColor: "#fff", borderRadius: "4px" }}
-          value={taskTitle}
-          onChange={event => setTaskTitle(event.target.value)}
-          autoComplete="off"
-        />
-      </Box>
-      <Box marginBottom="24px">
-        <div style={{ marginBottom: "8px" }}>ESTIMATED TASK ROUND</div>
-        <TomatoSelect
-          taskRound={taskRound}
-          setTaskRound={setTaskRound}
-          toamtoSetting={toamtoSetting}
-          setToamtoSetting={setToamtoSetting}
-        />
-      </Box>
+      <TomatoInput
+        placeholder="add your new task"
+        variant="filled"
+        fullWidth
+        style={{ backgroundColor: "#fff", borderRadius: "4px" }}
+        value={taskTitle}
+        setValue={setTaskTitle}
+        autoComplete="off"
+      />
+      <TomatoSelect
+        taskRound={taskRound}
+        setTaskRound={setTaskRound}
+        toamtoSetting={toamtoSetting}
+        setToamtoSetting={setToamtoSetting}
+      />
       <TomatoBotton
         variant="contained"
         color="secondary"

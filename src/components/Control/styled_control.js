@@ -90,6 +90,23 @@ export const ControlTitleWrapper = styled.div`
   }
 `;
 
+export const InputStyle = styled.div`
+  margin-bottom: 8px;
+  font-family: "Lato";
+  font-weight: bolder;
+  font-size: 14px;
+  letter-spacing: 0.7px;
+  line-height: 17px;
+  color: #acacac;
+  ${({ isedit }) =>
+    isedit === "true" &&
+    `
+      font-size: 12px;
+      letter-spacing: 0.6px;
+      line-height: 15px;
+  `}
+`;
+
 export const TomatoBotton = styled(Button)`
   height: 50px;
   border-radius: 50px;
@@ -99,6 +116,13 @@ export const TomatoBotton = styled(Button)`
   font-weight: bolder;
   font-family: Lato;
   color: #fcfcfc;
+  margin: 0 8px;
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
 `;
 
 export const TomatoTabWrapper = styled.div`
@@ -166,10 +190,12 @@ export const TaskToggleSetting = styled.div`
   width: 40px;
   height: 50px;
   flex: 0 0 auto;
+  cursor: pointer;
 `;
 
 export const TaskEditWrapper = styled(Box)`
   position: relative;
+  flex-direction: column;
 
   &::after {
     content: "";
@@ -194,7 +220,7 @@ export const RingtoneListWrapper = styled.li`
   border-bottom: 1px solid #333333;
 `;
 
-export const RingtoneListRadio = styled.div`
+export const RingtoneRadio = styled.div`
   width: 40px;
   height: 100%;
   display: flex;
@@ -206,7 +232,7 @@ export const RingtoneListRadio = styled.div`
   line-height: 19px;
   font-family: "Lato";
 `;
-export const RingtoneListTitle = styled.div`
+export const RingtoneTitle = styled.div`
   height: 100%;
   display: flex;
   justify-content: flex-start;
@@ -215,7 +241,7 @@ export const RingtoneListTitle = styled.div`
   color: #fcfcfc;
 `;
 
-export const RingtoneListIcon = styled.div`
+export const RingtoneIcon = styled.div`
   width: 40px;
   height: 100%;
   display: flex;

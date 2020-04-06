@@ -26,7 +26,7 @@ import {
 import Add from "./content/Add";
 import Tasklist from "./content/Tasklist";
 import Analytics from "./content/Analytics";
-import Ringtone from "./content/Ringtone";
+import RingtoneList from "./content/RingtoneList";
 
 const Control = () => {
   const settings = [
@@ -43,7 +43,7 @@ const Control = () => {
       icon: faChartBar
     },
     {
-      path: "/ringtone",
+      path: "/ringtone/work",
       icon: faMusic
     }
   ];
@@ -74,8 +74,8 @@ const Control = () => {
           <Route path="/analytics">
             <Analytics />
           </Route>
-          <Route path="/ringtone">
-            <Ringtone />
+          <Route path="/ringtone/:path">
+            <RingtoneList />
           </Route>
         </Switch>
       </ControlContentWrapper>

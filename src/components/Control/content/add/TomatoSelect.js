@@ -1,5 +1,8 @@
 import React, { useEffect } from "react";
+import { Box } from "@material-ui/core";
 import { TomatoSelectWrapper } from "../../styled_control";
+import { InputStyle } from "../../styled_control";
+
 const Toamto = ({
   round,
   isChecked,
@@ -49,22 +52,26 @@ const TomatoSelect = ({
   taskRound,
   setTaskRound,
   toamtoSetting,
-  setToamtoSetting
+  setToamtoSetting,
+  isedit
 }) => {
   return (
-    <TomatoSelectWrapper>
-      {toamtoSetting.map(({ round, isChecked }) => (
-        <Toamto
-          key={round}
-          round={round}
-          isChecked={isChecked}
-          toamtoSetting={toamtoSetting}
-          setToamtoSetting={setToamtoSetting}
-          taskRound={taskRound}
-          setTaskRound={setTaskRound}
-        />
-      ))}
-    </TomatoSelectWrapper>
+    <Box marginBottom="24px">
+      <InputStyle isedit={isedit}>ESTIMATED TASK ROUND</InputStyle>
+      <TomatoSelectWrapper>
+        {toamtoSetting.map(({ round, isChecked }) => (
+          <Toamto
+            key={round}
+            round={round}
+            isChecked={isChecked}
+            toamtoSetting={toamtoSetting}
+            setToamtoSetting={setToamtoSetting}
+            taskRound={taskRound}
+            setTaskRound={setTaskRound}
+          />
+        ))}
+      </TomatoSelectWrapper>
+    </Box>
   );
 };
 

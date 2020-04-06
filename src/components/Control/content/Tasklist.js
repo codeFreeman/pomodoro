@@ -7,6 +7,7 @@ import Todo from "./tasklist/Todo";
 import Done from "./tasklist/Done";
 import Archive from "./tasklist/Archive";
 import axios from "axios";
+import useWindowSize from "@rehooks/window-size";
 
 const Tasklist = () => {
   const [fetchList, setFetchList] = useState([]);
@@ -14,7 +15,7 @@ const Tasklist = () => {
   const [done, setDone] = useState([]);
   const [archive, setArchive] = useState([]);
   const { pathname } = useLocation();
-
+  const { innerHeight } = useWindowSize();
   const fetchData = async () => {
     const response = await axios.get(
       "https://podomoro-212c5.firebaseio.com/podomoro.json"
@@ -65,7 +66,7 @@ const Tasklist = () => {
           ARCHIVE
         </TomatoTab>
       </TomatoTabWrapper>
-      <Box>
+      <Box height={innerHeight - 160} overflow="scroll">
         <Switch>
           <Route path="/tasklist/todo">
             <Todo data={todo} />
