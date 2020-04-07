@@ -1,11 +1,7 @@
 import React from "react";
 import Task from "./Task";
-import { useEffect } from "react";
 
 const Todo = ({ data }) => {
-  useEffect(() => {
-    console.log("data", data);
-  }, [data]);
   return (
     <div>
       {data.map(({ id, taskRound, taskTitle }) => (

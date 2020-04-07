@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { fetchTasklists } from "../../../actions";
+
 import ControlTitle from "./ControlTitle";
 import { Switch, Route, useLocation } from "react-router-dom";
 import { TomatoTabWrapper, TomatoTab } from "../styled_control";
@@ -6,42 +9,14 @@ import { Box } from "@material-ui/core";
 import Todo from "./tasklist/Todo";
 import Done from "./tasklist/Done";
 import Archive from "./tasklist/Archive";
-import axios from "axios";
 import useWindowSize from "@rehooks/window-size";
 
-const Tasklist = () => {
-  const [fetchList, setFetchList] = useState([]);
-  const [todo, setTodo] = useState([]);
-  const [done, setDone] = useState([]);
-  const [archive, setArchive] = useState([]);
+const Tasklist = ({ fetchTasklists, tasks }) => {
   const { pathname } = useLocation();
   const { innerHeight } = useWindowSize();
-  const fetchData = async () => {
-    const response = await axios.get(
-      "https://podomoro-212c5.firebaseio.com/podomoro.json"
-    );
-    const newList = [];
-    for (const key in response.data) {
-      newList.push({
-        id: key,
-        taskTitle: response.data[key].taskTitle,
-        taskRound: response.data[key].taskRound,
-        todo: response.data[key].todo,
-        done: response.data[key].done,
-        archive: response.data[key].archive
-      });
-    }
-    console.log("newList", newList);
-    setFetchList(newList);
-  };
   useEffect(() => {
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-    const todolist = fetchList.filter(list => list.todo === true);
-    setTodo(todolist);
-  }, [fetchList]);
+    fetchTasklists();
+  }, [fetchTasklists]);
 
   return (
     <div>
@@ -66,21 +41,30 @@ const Tasklist = () => {
           ARCHIVE
         </TomatoTab>
       </TomatoTabWrapper>
-      <Box height={innerHeight - 160} overflow="scroll">
-        <Switch>
-          <Route path="/tasklist/todo">
-            <Todo data={todo} />
-          </Route>
-          <Route path="/tasklist/done">
-            <Done />
-          </Route>
-          <Route path="/tasklist/archive">
-            <Archive />
-          </Route>
-        </Switch>
-      </Box>
+      {tasks && (
+        <Box height={innerHeight - 160} overflow="scroll">
+          <Switch>
+            <Route path="/tasklist/todo">
+              <Todo data={tasks.filter(list => list.todo === true)} />
+            </Route>
+            <Route path="/tasklist/done">
+              <Done />
+            </Route>
+            <Route path="/tasklist/archive">
+              <Archive />
+            </Route>
+          </Switch>
+        </Box>
+      )}
     </div>
   );
 };
 
-export default Tasklist;
+const mapStateToProps = state => {
+  console.log("list", state);
+  return {
+    tasks: state.tasks.newtaskList
+  };
+};
+
+export default connect(mapStateToProps, { fetchTasklists })(Tasklist);

@@ -1,11 +1,8 @@
 import React from "react";
 import { Box } from "@material-ui/core";
 import Tabs from "./Tabs";
-import {
-  Switch,
-  Route
-  // useHistory, useParams
-} from "react-router-dom";
+
+import { Switch, Route } from "react-router-dom";
 
 import {
   ControlTabsWrapper,
@@ -27,7 +24,6 @@ import Add from "./content/Add";
 import Tasklist from "./content/Tasklist";
 import Analytics from "./content/Analytics";
 import RingtoneList from "./content/RingtoneList";
-
 const Control = () => {
   const settings = [
     {

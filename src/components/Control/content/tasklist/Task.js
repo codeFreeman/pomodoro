@@ -15,7 +15,7 @@ const Task = ({ id, taskTitle, taskRound }) => {
   const [toggleActive, setToggleActive] = useState(false);
   const [toggleEdit, setToggleEdit] = useState(false);
   return (
-    <>
+    <div style={{ borderBottom: "1px solid #333333" }}>
       <TaskWrapper width="100%" height="50px" bgcolor="#414141">
         <TaskActive>
           {toggleActive ? <img src={tomatoSmallColor} alt="" /> : ""}
@@ -31,7 +31,7 @@ const Task = ({ id, taskTitle, taskRound }) => {
       {toggleEdit && (
         <TaskEdit id={id} taskTitle={taskTitle} taskRound={taskRound} />
       )}
-    </>
+    </div>
   );
 };
 

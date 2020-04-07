@@ -1,15 +1,15 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { createTask } from "../../../actions";
+
 import ControlTitle from "./ControlTitle";
 import TomatoInput from "./add/TomatoInput";
 import { TomatoBotton } from "../styled_control";
 import TomatoSelect from "./add/TomatoSelect";
-import { useHistory } from "react-router-dom";
-import Axios from "axios";
 
-const Add = () => {
+const Add = ({ createTask }) => {
   const [taskTitle, setTaskTitle] = useState("");
   const [taskRound, setTaskRound] = useState(1);
-  const history = useHistory();
   const initSetting = [
     { round: 1, isChecked: true },
     { round: 2, isChecked: false },
@@ -27,15 +27,13 @@ const Add = () => {
     setTaskTitle("");
     setTaskRound(1);
     setToamtoSetting(initSetting);
-    // return data;
-    Axios.post("https://podomoro-212c5.firebaseio.com/podomoro.json", {
+    createTask({
       taskTitle,
       taskRound,
       todo: true,
       done: false,
       archive: false
     });
-    history.push("/tasklist/todo");
   };
   return (
     <div>
@@ -67,4 +65,4 @@ const Add = () => {
   );
 };
 
-export default Add;
+export default connect(null, { createTask })(Add);
