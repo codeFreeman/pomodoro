@@ -2,13 +2,12 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchTasklists } from "../../../actions";
 
-import ControlTitle from "./ControlTitle";
+import ControlTitle from "../../utils/ControlTitle";
 import { Switch, Route, useLocation } from "react-router-dom";
 import { TomatoTabWrapper, TomatoTab } from "../styled_control";
 import { Box } from "@material-ui/core";
-import Todo from "./tasklist/Todo";
-import Done from "./tasklist/Done";
-import Archive from "./tasklist/Archive";
+import Todo from "./Todo";
+import Done from "./Done";
 import useWindowSize from "@rehooks/window-size";
 
 const Tasklist = ({ fetchTasklists, tasks }) => {
@@ -34,24 +33,15 @@ const Tasklist = ({ fetchTasklists, tasks }) => {
         >
           DONE
         </TomatoTab>
-        <TomatoTab
-          isactive={pathname === "/tasklist/archive" ? "true" : "false"}
-          to="/tasklist/archive"
-        >
-          ARCHIVE
-        </TomatoTab>
       </TomatoTabWrapper>
       {tasks && (
         <Box height={innerHeight - 160} overflow="scroll">
           <Switch>
             <Route path="/tasklist/todo">
-              <Todo data={tasks.filter(list => list.todo === true)} />
+              <Todo data={tasks.filter((list) => list.todo === 1)} />
             </Route>
             <Route path="/tasklist/done">
-              <Done />
-            </Route>
-            <Route path="/tasklist/archive">
-              <Archive />
+              <Done data={tasks.filter((list) => list.todo === 0)} />
             </Route>
           </Switch>
         </Box>
@@ -60,10 +50,10 @@ const Tasklist = ({ fetchTasklists, tasks }) => {
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   console.log("list", state);
   return {
-    tasks: state.tasks.newtaskList
+    tasks: state.tasks.newtaskList,
   };
 };
 

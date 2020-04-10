@@ -1,5 +1,5 @@
 import React from "react";
-import ControlTitle from "./ControlTitle";
+import ControlTitle from "../../utils/ControlTitle";
 import { Switch, Route, useLocation } from "react-router-dom";
 import { Box } from "@material-ui/core";
 import Work from "./ringtone/Work";

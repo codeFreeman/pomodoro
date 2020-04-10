@@ -1,7 +1,7 @@
-import React from "react";
+import React from "./node_modules/react";
 import Podomoro from "./Podomoro";
-import Logo from "./Logo";
-import { WarningMsg } from "./styled_podomoro";
+import Logo from "../Logo";
+import { WarningMsg } from "../styled_view";
 
 const NoTask = () => {
   return (
@@ -11,7 +11,7 @@ const NoTask = () => {
           position: "absolute",
           transform: "translate(-50%,-50%)",
           top: "50%",
-          left: "50%"
+          left: "50%",
         }}
       >
         <Podomoro />
@@ -25,7 +25,7 @@ const NoTask = () => {
           position: "absolute",
           bottom: "56px",
           transform: "translateX(-50%)",
-          left: "50%"
+          left: "50%",
         }}
       >
         <Logo />

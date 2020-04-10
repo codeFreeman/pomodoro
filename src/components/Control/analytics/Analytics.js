@@ -1,6 +1,6 @@
 import React from "react";
-import ControlTitle from "./ControlTitle";
-import Charts from "../charts/Charts";
+import ControlTitle from "../../utils/ControlTitle";
+import Charts from "./chart";
 
 const Analytics = () => {
   return (

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Box } from "@material-ui/core";
 import { connect } from "react-redux";
-import { fetchTask, editTask } from "../../../../actions";
+import { editTask } from "../../../actions";
 
-import { TaskEditWrapper, TomatoBotton } from "../../styled_control";
-import TomatoInput from "../add/TomatoInput";
-import TomatoSelect from "../add/TomatoSelect";
+import { TaskEditWrapper, TomatoBotton } from "../styled_control";
+import TomatoInput from "../../utils/Input";
+import TomatoSelect from "../../utils/Select";
 
-const TaskEdit = ({ fetchTask, editTask, id, taskTitle, taskRound }) => {
+const TaskEdit = ({ editTask, id, taskTitle, taskRound }) => {
   const [inputValue, setInputValue] = useState("");
   const [inputTaskRound, setInputTaskRound] = useState(1);
   const [toamtoSetting, setToamtoSetting] = useState([]);
@@ -22,18 +22,18 @@ const TaskEdit = ({ fetchTask, editTask, id, taskTitle, taskRound }) => {
       { round: 7, isChecked: false },
       { round: 8, isChecked: false },
       { round: 9, isChecked: false },
-      { round: 10, isChecked: false }
+      { round: 10, isChecked: false },
     ];
-    const updateSetting = initSetting.map(set => {
+    const updateSetting = initSetting.map((set) => {
       if (taskRound >= set.round) {
         return {
           ...set,
-          isChecked: true
+          isChecked: true,
         };
       } else {
         return {
           ...set,
-          isChecked: false
+          isChecked: false,
         };
       }
     });
@@ -45,9 +45,6 @@ const TaskEdit = ({ fetchTask, editTask, id, taskTitle, taskRound }) => {
     setInputTaskRound(taskRound);
   }, [taskTitle, taskRound]);
 
-  useEffect(() => {
-    fetchTask(id);
-  }, [fetchTask, id]);
   return (
     <TaskEditWrapper
       display="flex"
@@ -69,24 +66,15 @@ const TaskEdit = ({ fetchTask, editTask, id, taskTitle, taskRound }) => {
         isedit="true"
       />
       <Box display="flex" justifyContent="space-between">
-        <TomatoBotton variant="contained" color="primary" fullWidth>
+        <TomatoBotton variant="contained" color="secondary" fullWidth>
           DELETE
         </TomatoBotton>
-        <TomatoBotton variant="contained" fullWidth>
-          ARCHIVE
-        </TomatoBotton>
-        <TomatoBotton variant="contained" color="secondary" fullWidth>
+        <TomatoBotton variant="contained" color="primary" fullWidth>
           SAVE
         </TomatoBotton>
       </Box>
     </TaskEditWrapper>
   );
 };
-const mapStateToProps = (state, ownProps) => {
-  console.log("edit", state);
-  // return {
-  //   task: state.stream[ownProps.match.params.id]
-  // };
-};
 
-export default connect(mapStateToProps, { fetchTask, editTask })(TaskEdit);
+export default connect(null, { editTask })(TaskEdit);

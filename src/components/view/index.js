@@ -1,6 +1,6 @@
 import React from "react";
-import NoTask from "./NoTask";
-import { ViewWrapper } from "./styled_podomoro";
+import NoTask from "./noTask";
+import { ViewWrapper } from "./styled_view";
 
 const View = () => {
   return (

@@ -14,11 +14,12 @@ export default (state = {}, action) => {
       for (const key in action.payload) {
         newtaskList.push({
           id: key,
-          taskTitle: action.payload[key].taskTitle,
-          taskRound: action.payload[key].taskRound,
+          title: action.payload[key].title,
+          round: action.payload[key].round,
+          currentRound: action.payload[key].currentRound,
           todo: action.payload[key].todo,
-          done: action.payload[key].done,
-          archive: action.payload[key].archive
+          status: action.payload[key].status,
+          create_at: action.payload[key].create_at
         });
       }
       return { ...state, newtaskList };

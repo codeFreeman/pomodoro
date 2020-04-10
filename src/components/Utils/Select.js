@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Box } from "@material-ui/core";
-import { TomatoSelectWrapper } from "../../styled_control";
-import { InputStyle } from "../../styled_control";
+import { TomatoSelectWrapper } from "../control/styled_control";
+import { InputStyle } from "../control/styled_control";
 
 const Toamto = ({
   round,

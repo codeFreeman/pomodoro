@@ -1,5 +1,5 @@
-import React from "react";
-import { PodomoroStyle } from "./styled_podomoro";
+import React from "./node_modules/react";
+import { PodomoroStyle } from "../styled_view";
 
 const Podomoro = () => {
   return <PodomoroStyle>PODOMORO</PodomoroStyle>;

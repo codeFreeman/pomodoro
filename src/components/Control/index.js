@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@material-ui/core";
-import Tabs from "./Tabs";
+import Tabs from "../utils/ControlTab";
 
 import { Switch, Route } from "react-router-dom";
 
@@ -8,7 +8,7 @@ import {
   ControlTabsWrapper,
   ControlContentWrapper,
   ControlToggle,
-  ToggleIcon
+  ToggleIcon,
 } from "./styled_control";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -16,32 +16,32 @@ import {
   faList,
   faChartBar,
   faMusic,
-  faArrowRight
+  faArrowRight,
   // faArrowLeft
 } from "@fortawesome/free-solid-svg-icons";
 
-import Add from "./content/Add";
-import Tasklist from "./content/Tasklist";
-import Analytics from "./content/Analytics";
-import RingtoneList from "./content/RingtoneList";
+import Add from "./add/Add";
+import Tasklist from "./tasklist/Tasklist";
+import Analytics from "./analytics/Analytics";
+import RingtoneList from "./ringtone/RingtoneList";
 const Control = () => {
   const settings = [
     {
       path: "/add",
-      icon: faPlusCircle
+      icon: faPlusCircle,
     },
     {
       path: "/tasklist/todo",
-      icon: faList
+      icon: faList,
     },
     {
       path: "/analytics",
-      icon: faChartBar
+      icon: faChartBar,
     },
     {
       path: "/ringtone/work",
-      icon: faMusic
-    }
+      icon: faMusic,
+    },
   ];
   return (
     <Box height="100%" bgcolor="#333333" display="flex">

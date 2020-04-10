@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { Box } from "@material-ui/core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 export const ViewWrapper = styled(Box)`
   position: relative;
   padding: 56px;
@@ -53,4 +55,13 @@ export const LogoStyle = styled.p`
   font-size: 10px;
   letter-spacing: 1.5px;
   line-height: 12px;
+`;
+
+export const TimerBtn = styled(FontAwesomeIcon)`
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

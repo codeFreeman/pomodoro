@@ -10,7 +10,9 @@ import {
 } from "./types";
 
 export const createTask = taskData => async (dispatch, getState) => {
-  const response = await fetchfirebase.post("/podomoro.json", { ...taskData });
+  const response = await fetchfirebase.post("/podomoro.json", {
+    ...taskData
+  });
   dispatch({ type: CREAE_TASK, payload: response.data });
   history.push("/tasklist/todo");
 };
@@ -31,12 +33,13 @@ export const deleteTask = id => async dispatch => {
 
 export const fetchTasklists = () => async dispatch => {
   const response = await fetchfirebase.get("/podomoro.json");
+  console.log("fetchTasklists response", response);
   dispatch({ type: FETCH_TASKLISTS, payload: response.data });
 };
 
-export const fetchTask = id => async dispatch => {
-  console.log("id", id);
-  const response = await fetchfirebase.get(`/podomoro.json/${id}`);
-  console.log("response", response);
-  dispatch({ type: FETCH_TASK, payload: response.data });
-};
+// export const fetchTask = id => async dispatch => {
+//   console.log("id", id);
+//   const response = await fetchfirebase.get(`/podomoro.json/${id}`);
+//   console.log("response", response);
+//   dispatch({ type: FETCH_TASK, payload: response.data });
+// };

@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { createTask } from "../../../actions";
-
-import ControlTitle from "./ControlTitle";
-import TomatoInput from "./add/TomatoInput";
+import moment from "moment";
+import ControlTitle from "../../utils/ControlTitle";
+import TomatoInput from "../../utils/Input";
 import { TomatoBotton } from "../styled_control";
-import TomatoSelect from "./add/TomatoSelect";
+import TomatoSelect from "../../utils/Select";
 
 const Add = ({ createTask }) => {
-  const [taskTitle, setTaskTitle] = useState("");
-  const [taskRound, setTaskRound] = useState(1);
+  const [title, SetTitle] = useState("");
+  const [round, setRound] = useState(1);
   const initSetting = [
     { round: 1, isChecked: true },
     { round: 2, isChecked: false },
@@ -24,15 +24,16 @@ const Add = ({ createTask }) => {
   ];
   const [toamtoSetting, setToamtoSetting] = useState(initSetting);
   const addTask = () => {
-    setTaskTitle("");
-    setTaskRound(1);
+    SetTitle("");
+    setRound(1);
     setToamtoSetting(initSetting);
     createTask({
-      taskTitle,
-      taskRound,
-      todo: true,
-      done: false,
-      archive: false
+      title,
+      round,
+      currentRound: 0,
+      status: 1,
+      todo: 1,
+      create_at: moment().format("YYYY/MM/DD")
     });
   };
   return (
@@ -43,13 +44,13 @@ const Add = ({ createTask }) => {
         variant="filled"
         fullWidth
         style={{ backgroundColor: "#fff", borderRadius: "4px" }}
-        value={taskTitle}
-        setValue={setTaskTitle}
+        value={title}
+        setValue={SetTitle}
         autoComplete="off"
       />
       <TomatoSelect
-        taskRound={taskRound}
-        setTaskRound={setTaskRound}
+        taskRound={round}
+        setTaskRound={setRound}
         toamtoSetting={toamtoSetting}
         setToamtoSetting={setToamtoSetting}
       />

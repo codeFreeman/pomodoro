@@ -6,12 +6,12 @@ import {
   TaskWrapper,
   TaskActive,
   TaskContent,
-  TaskToggleSetting
-} from "../../styled_control.js";
+  TaskToggleSetting,
+} from "../styled_control.js";
 const tomatoSmallColor =
   process.env.PUBLIC_URL + "/images/tomato_small_color.svg";
 
-const Task = ({ id, taskTitle, taskRound }) => {
+const Task = ({ id, round, title, status, currentRound }) => {
   const [toggleActive, setToggleActive] = useState(false);
   const [toggleEdit, setToggleEdit] = useState(false);
   return (
@@ -21,16 +21,14 @@ const Task = ({ id, taskTitle, taskRound }) => {
           {toggleActive ? <img src={tomatoSmallColor} alt="" /> : ""}
         </TaskActive>
         <TaskContent id={id} onClick={() => setToggleActive(!toggleActive)}>
-          <div>{taskTitle}</div>
-          <div>{taskRound}</div>
+          <div>{title}</div>
+          <div>{round}</div>
         </TaskContent>
         <TaskToggleSetting onClick={() => setToggleEdit(!toggleEdit)}>
           <FontAwesomeIcon icon={toggleEdit ? faEllipsisH : faEllipsisV} />
         </TaskToggleSetting>
       </TaskWrapper>
-      {toggleEdit && (
-        <TaskEdit id={id} taskTitle={taskTitle} taskRound={taskRound} />
-      )}
+      {toggleEdit && <TaskEdit id={id} taskTitle={title} taskRound={round} />}
     </div>
   );
 };
