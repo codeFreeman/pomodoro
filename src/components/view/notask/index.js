@@ -1,4 +1,4 @@
-import React from "./node_modules/react";
+import React from "react";
 import Podomoro from "./Podomoro";
 import Logo from "../Logo";
 import { WarningMsg } from "../styled_view";

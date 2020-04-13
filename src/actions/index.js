@@ -6,34 +6,39 @@ import {
   EDIT_TASK,
   DELETE_TASK,
   FETCH_TASKLISTS,
-  FETCH_TASK
+  FETCH_TASK,
 } from "./types";
 
-export const createTask = taskData => async (dispatch, getState) => {
+export const createTask = (taskData) => async (dispatch, getState) => {
   const response = await fetchfirebase.post("/podomoro.json", {
-    ...taskData
+    ...taskData,
   });
-  dispatch({ type: CREAE_TASK, payload: response.data });
-  history.push("/tasklist/todo");
+
+  if (response.data.name) {
+    dispatch({
+      type: CREAE_TASK,
+      payload: { id: response.data.name, ...taskData },
+    });
+    history.push("/tasklist/todo");
+  }
 };
 
 export const editTask = (id, taskData) => async (dispatch, getState) => {
   const response = await fetchfirebase.post(`/podomoro.json/${id}`, {
-    ...taskData
+    ...taskData,
   });
   dispatch({ type: EDIT_TASK, payload: response.data });
   history.push("/tasklist/todo");
 };
 
-export const deleteTask = id => async dispatch => {
+export const deleteTask = (id) => async (dispatch) => {
   await fetchfirebase.delete(`/podomoro.json/${id}`);
   dispatch({ type: DELETE_TASK, payload: id });
   history.push("/tasklist/todo");
 };
 
-export const fetchTasklists = () => async dispatch => {
+export const fetchTasklists = () => async (dispatch) => {
   const response = await fetchfirebase.get("/podomoro.json");
-  console.log("fetchTasklists response", response);
   dispatch({ type: FETCH_TASKLISTS, payload: response.data });
 };
 

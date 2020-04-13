@@ -2,8 +2,8 @@ import React from "react";
 import ControlTitle from "../../utils/ControlTitle";
 import { Switch, Route, useLocation } from "react-router-dom";
 import { Box } from "@material-ui/core";
-import Work from "./ringtone/Work";
-import Break from "./ringtone/Break";
+import Work from "./Work";
+import Break from "./Break";
 import { TomatoTabWrapper, TomatoTab } from "../styled_control";
 import useWindowSize from "@rehooks/window-size";
 

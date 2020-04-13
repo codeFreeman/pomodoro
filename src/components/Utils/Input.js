@@ -11,7 +11,7 @@ const TomatoInput = ({ placeholder, value, setValue, isedit }) => {
         fullWidth
         style={{ backgroundColor: "#fff", borderRadius: "4px" }}
         value={value}
-        onChange={event => setValue(event.target.value)}
+        onChange={(event) => setValue(event.target.value)}
         autoComplete="off"
       />
     </Box>

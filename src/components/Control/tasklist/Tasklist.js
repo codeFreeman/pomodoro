@@ -17,6 +17,18 @@ const Tasklist = ({ fetchTasklists, tasks }) => {
     fetchTasklists();
   }, [fetchTasklists]);
 
+  // for (const key in action.payload) {
+  //       taskList.push({
+  //         id: key,
+  //         title: action.payload[key].title,
+  //         round: action.payload[key].round,
+  //         currentRound: action.payload[key].currentRound,
+  //         todo: action.payload[key].todo,
+  //         status: action.payload[key].status,
+  //         create_at: action.payload[key].create_at,
+  //       });
+  //     }
+
   return (
     <div>
       <ControlTitle title="TASK LISTS" />
@@ -53,7 +65,7 @@ const Tasklist = ({ fetchTasklists, tasks }) => {
 const mapStateToProps = (state) => {
   console.log("list", state);
   return {
-    tasks: state.tasks.newtaskList,
+    tasks: state.tasks,
   };
 };
 

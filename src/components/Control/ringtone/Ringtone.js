@@ -3,8 +3,8 @@ import {
   RingtoneListWrapper,
   RingtoneRadio,
   RingtoneTitle,
-  RingtoneIcon
-} from "../../styled_control";
+  RingtoneIcon,
+} from "../styled_control";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
@@ -15,19 +15,19 @@ const Ringtone = ({
   soundName,
   soundLink,
   ringroneSetting,
-  setRingroneSetting
+  setRingroneSetting,
 }) => {
-  const currentSoundHandler = currentId => {
-    const newSetting = ringroneSetting.map(ringtone => {
+  const currentSoundHandler = (currentId) => {
+    const newSetting = ringroneSetting.map((ringtone) => {
       if (ringtone.id === currentId) {
         return {
           ...ringtone,
-          currentSound: true
+          currentSound: true,
         };
       } else {
         return {
           ...ringtone,
-          currentSound: false
+          currentSound: false,
         };
       }
     });

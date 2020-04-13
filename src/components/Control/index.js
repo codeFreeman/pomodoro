@@ -20,7 +20,7 @@ import {
   // faArrowLeft
 } from "@fortawesome/free-solid-svg-icons";
 
-import Add from "./add/Add";
+import Add from "./add";
 import Tasklist from "./tasklist/Tasklist";
 import Analytics from "./analytics/Analytics";
 import RingtoneList from "./ringtone/RingtoneList";

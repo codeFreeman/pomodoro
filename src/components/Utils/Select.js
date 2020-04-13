@@ -9,7 +9,7 @@ const Toamto = ({
   toamtoSetting,
   setToamtoSetting,
   taskRound,
-  setTaskRound
+  setTaskRound,
 }) => {
   const tomatoSmallColor =
     process.env.PUBLIC_URL + "/images/tomato_small_color.svg";
@@ -19,21 +19,21 @@ const Toamto = ({
   useEffect(() => {
     setTaskRound(round);
   }, [round, setTaskRound]);
-  const hoverToamto = round => {
+  const hoverToamto = (round) => {
     // set round
     const newRound = taskRound !== round ? round : taskRound;
     setTaskRound(newRound);
     // Toamto status
-    const newToamtoSetting = toamtoSetting.map(set => {
+    const newToamtoSetting = toamtoSetting.map((set) => {
       if (set.round >= round + 1) {
         return {
           ...set,
-          isChecked: false
+          isChecked: false,
         };
       } else {
         return {
           ...set,
-          isChecked: true
+          isChecked: true,
         };
       }
     });
@@ -53,7 +53,7 @@ const TomatoSelect = ({
   setTaskRound,
   toamtoSetting,
   setToamtoSetting,
-  isedit
+  isedit,
 }) => {
   return (
     <Box marginBottom="24px">

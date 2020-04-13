@@ -20,7 +20,7 @@ const Add = ({ createTask }) => {
     { round: 7, isChecked: false },
     { round: 8, isChecked: false },
     { round: 9, isChecked: false },
-    { round: 10, isChecked: false }
+    { round: 10, isChecked: false },
   ];
   const [toamtoSetting, setToamtoSetting] = useState(initSetting);
   const addTask = () => {
@@ -33,7 +33,7 @@ const Add = ({ createTask }) => {
       currentRound: 0,
       status: 1,
       todo: 1,
-      create_at: moment().format("YYYY/MM/DD")
+      create_at: moment().format("YYYY/MM/DD"),
     });
   };
   return (
