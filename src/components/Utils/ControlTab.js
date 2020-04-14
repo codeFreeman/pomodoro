@@ -2,7 +2,7 @@ import React from "react";
 import { Box } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-const Tabs = ({ path, icon }) => {
+const ControlTab = ({ path, icon }) => {
   return (
     <Link to={path}>
       <Box
@@ -18,4 +18,4 @@ const Tabs = ({ path, icon }) => {
   );
 };
 
-export default Tabs;
+export default ControlTab;

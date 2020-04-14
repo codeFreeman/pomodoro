@@ -6,7 +6,8 @@ import {
   EDIT_TASK,
   DELETE_TASK,
   FETCH_TASKLISTS,
-  FETCH_TASK,
+  EDIT_STATUS,
+  // FETCH_TASK,
 } from "./types";
 
 export const createTask = (taskData) => async (dispatch, getState) => {
@@ -24,10 +25,35 @@ export const createTask = (taskData) => async (dispatch, getState) => {
 };
 
 export const editTask = (id, taskData) => async (dispatch, getState) => {
-  const response = await fetchfirebase.post(`/podomoro.json/${id}`, {
-    ...taskData,
+  const { taskList } = getState().tasks;
+  const updateStatus = taskList.map((task) => {
+    if (task.id === id) {
+      return { ...task, title: taskData.title, round: taskData.round };
+    } else {
+      return { ...task };
+    }
+  });
+  const response = await fetchfirebase.put("/podomoro.json", {
+    ...updateStatus,
   });
   dispatch({ type: EDIT_TASK, payload: response.data });
+  history.push("/tasklist/todo");
+};
+
+export const editStatus = (id) => async (dispatch, getState) => {
+  const { taskList } = getState().tasks;
+  const updateStatus = taskList.map((task) => {
+    if (task.id === id) {
+      return { ...task, id, status: 1 };
+    } else {
+      return { ...task, id, status: 0 };
+    }
+  });
+
+  const response = await fetchfirebase.put("/podomoro.json", {
+    ...updateStatus,
+  });
+  dispatch({ type: EDIT_STATUS, payload: response.data });
   history.push("/tasklist/todo");
 };
 

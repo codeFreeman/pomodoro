@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Box } from "@material-ui/core";
-import { TomatoSelectWrapper } from "../control/styled_control";
-import { InputStyle } from "../control/styled_control";
+import { TomatoSelectWrapper } from "./styled_utils";
+import { InputStyle } from "./styled_utils";
 
 const Toamto = ({
   round,
@@ -48,7 +48,7 @@ const Toamto = ({
     />
   );
 };
-const TomatoSelect = ({
+const Select = ({
   taskRound,
   setTaskRound,
   toamtoSetting,
@@ -75,4 +75,4 @@ const TomatoSelect = ({
   );
 };
 
-export default TomatoSelect;
+export default Select;

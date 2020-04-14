@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@material-ui/core";
-import Tabs from "../utils/ControlTab";
+import ControlTab from "../utils/ControlTab";
 
 import { Switch, Route } from "react-router-dom";
 
@@ -20,10 +20,10 @@ import {
   // faArrowLeft
 } from "@fortawesome/free-solid-svg-icons";
 
-import Add from "./add";
-import Tasklist from "./tasklist/Tasklist";
-import Analytics from "./analytics/Analytics";
-import RingtoneList from "./ringtone/RingtoneList";
+import { Add } from "./add";
+import { Tasklist } from "./tasklist";
+// import Analytics from "./analytics/Analytics";
+// import RingtoneList from "./ringtone/RingtoneList";
 const Control = () => {
   const settings = [
     {
@@ -47,7 +47,7 @@ const Control = () => {
     <Box height="100%" bgcolor="#333333" display="flex">
       <ControlTabsWrapper width="80px">
         {settings.map(({ path, icon }) => (
-          <Tabs key={path} path={path} icon={icon} />
+          <ControlTab key={path} path={path} icon={icon} />
         ))}
         <ControlToggle>
           <Box display="flex" justifyContent="flex-start" alignItems="center">
@@ -68,10 +68,12 @@ const Control = () => {
             <Tasklist />
           </Route>
           <Route path="/analytics">
-            <Analytics />
+            {/* <Analytics /> */}
+            <div>Analytics</div>
           </Route>
           <Route path="/ringtone/:path">
-            <RingtoneList />
+            {/* <RingtoneList /> */}
+            <div>RingtoneList</div>
           </Route>
         </Switch>
       </ControlContentWrapper>

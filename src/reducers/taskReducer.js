@@ -10,7 +10,19 @@ import {
 export default (state = {}, action) => {
   switch (action.type) {
     case FETCH_TASKLISTS:
-      return { ...state, [action.payload.id]: action.payload };
+      const taskList = [];
+      for (const key in action.payload) {
+        taskList.push({
+          id: key,
+          title: action.payload[key].title,
+          round: action.payload[key].round,
+          currentRound: action.payload[key].currentRound,
+          todo: action.payload[key].todo,
+          status: action.payload[key].status,
+          create_at: action.payload[key].create_at,
+        });
+      }
+      return { ...state, taskList };
     case FETCH_TASK:
       return { ...state, [action.payload.id]: action.payload };
     case CREAE_TASK:

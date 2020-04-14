@@ -1,7 +1,8 @@
 import React from "react";
 import { Box, TextField } from "@material-ui/core";
-import { InputStyle } from "../control/styled_control";
-const TomatoInput = ({ placeholder, value, setValue, isedit }) => {
+import { InputStyle } from "./styled_utils";
+
+const Input = ({ placeholder, value, setValue, isedit }) => {
   return (
     <Box marginBottom="24px">
       <InputStyle isedit={isedit}>TASK TITLE</InputStyle>
@@ -18,4 +19,4 @@ const TomatoInput = ({ placeholder, value, setValue, isedit }) => {
   );
 };
 
-export default TomatoInput;
+export default Input;

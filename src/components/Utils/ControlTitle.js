@@ -1,5 +1,6 @@
 import React from "react";
-import { ControlTitleWrapper } from "../control/styled_control";
+import { ControlTitleWrapper } from "./styled_utils";
+
 const ControlTitle = ({ title }) => {
   return <ControlTitleWrapper>{title}</ControlTitleWrapper>;
 };
