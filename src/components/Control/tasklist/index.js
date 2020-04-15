@@ -1,7 +1,6 @@
-import Todo from "./list/List";
-import Done from "./done/Done";
+import { List } from "./list";
 import Task from "../../utils/Task";
 import TaskEdit from "./taskedit/TaskEdit";
 import Tasklist from "./Tasklist";
 
-export { Todo, Done, Task, TaskEdit, Tasklist };
+export { List, Task, TaskEdit, Tasklist };

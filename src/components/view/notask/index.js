@@ -1,7 +1,7 @@
 import React from "react";
 import Podomoro from "./Podomoro";
 import Logo from "../Logo";
-import { WarningMsg } from "../styled_view";
+import WarningMsg from "./WarningMsg";
 
 const NoTask = () => {
   return (
@@ -15,10 +15,7 @@ const NoTask = () => {
         }}
       >
         <Podomoro />
-        <WarningMsg>
-          You don’t have any task now,
-          <br /> please add task first!
-        </WarningMsg>
+        <WarningMsg />
       </div>
       <div
         style={{

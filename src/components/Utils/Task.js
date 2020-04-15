@@ -30,13 +30,17 @@ const Task = ({
 }) => {
   const [active, setActive] = useState(null);
   const [toggleEdit, setToggleEdit] = useState(false);
+  const [inputTitle, setInputTitle] = useState("");
+  const [inputRound, setInputRound] = useState(0);
   const handleActive = (activeId) => {
     editStatus(activeId);
     setFetchAgain(!fetchAgain);
   };
   useEffect(() => {
+    setInputTitle(title);
+    setInputRound(round);
     setActive(status);
-  }, [status]);
+  }, [round, status, title]);
 
   return (
     <div style={{ borderBottom: "1px solid #333333" }}>
@@ -45,8 +49,8 @@ const Task = ({
           {active === 1 ? <img src={tomatoSmallColor} alt="" /> : ""}
         </TaskActive>
         <TaskContent id={id} onClick={() => handleActive(id)}>
-          <div>{title}</div>
-          <div>{round}</div>
+          <div style={{ minHeight: "19px" }}>{inputTitle}</div>
+          <div style={{ minHeight: "19px" }}>{inputRound}</div>
         </TaskContent>
         <TaskToggleSetting onClick={() => setToggleEdit(!toggleEdit)}>
           <TaskLink
@@ -59,12 +63,18 @@ const Task = ({
       {toggleEdit && (
         <TaskEdit
           id={id}
-          title={title}
-          round={round}
+          inputTitle={inputTitle}
+          inputRound={inputRound}
+          setInputTitle={setInputTitle}
+          setInputRound={setInputRound}
           currentRound={currentRound}
           status={status}
           todo={todo}
           create_at={create_at}
+          toggleEdit={toggleEdit}
+          setToggleEdit={setToggleEdit}
+          fetchAgain={fetchAgain}
+          setFetchAgain={setFetchAgain}
         />
       )}
     </div>

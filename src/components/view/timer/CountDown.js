@@ -1,7 +1,7 @@
 import React from "react";
 
-const Timer = () => {
-  return <div>Timer</div>;
+const CountDown = () => {
+  return <div>CountDown</div>;
 };
 
-export default Timer;
+export default CountDown;

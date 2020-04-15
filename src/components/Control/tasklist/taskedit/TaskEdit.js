@@ -10,17 +10,21 @@ import Button from "../../../utils/Button";
 
 const TaskEdit = ({
   id,
-  title,
-  round,
+  inputTitle,
+  inputRound,
+  setInputTitle,
+  setInputRound,
   currentRound,
   todo,
   status,
   create_at,
+  toggleEdit,
+  setToggleEdit,
+  fetchAgain,
+  setFetchAgain,
   editTask,
   deleteTask,
 }) => {
-  const [inputTitle, setInputTitle] = useState("");
-  const [inputRound, setInputRound] = useState(1);
   const [toamtoSetting, setToamtoSetting] = useState([]);
   useEffect(() => {
     const initSetting = [
@@ -36,7 +40,7 @@ const TaskEdit = ({
       { round: 10, isChecked: false },
     ];
     const updateSetting = initSetting.map((set) => {
-      if (round >= set.round) {
+      if (inputRound >= set.round) {
         return {
           ...set,
           isChecked: true,
@@ -49,21 +53,19 @@ const TaskEdit = ({
       }
     });
     setToamtoSetting(updateSetting);
-  }, [round]);
-
-  useEffect(() => {
-    setInputTitle(title);
-    setInputRound(round);
-  }, [round, title]);
+  }, [inputRound]);
 
   const handleDeleteTask = (taskId) => {
+    setToggleEdit(!toggleEdit);
     deleteTask(taskId);
   };
   const handleEditTask = (taskId) => {
+    setToggleEdit(!toggleEdit);
     editTask(taskId, {
       title: inputTitle,
       round: inputRound,
     });
+    setFetchAgain(!fetchAgain);
   };
 
   return (

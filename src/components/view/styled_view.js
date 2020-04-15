@@ -39,16 +39,6 @@ export const PodomoroStyle = styled.div`
   }
 `;
 
-export const WarningMsg = styled.div`
-  font-family: "Lato";
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 1.4px;
-  line-height: 20px;
-  margin-top: 48px;
-  text-align: center;
-`;
-
 export const LogoStyle = styled.p`
   font-family: "Lato";
   font-weight: 300;

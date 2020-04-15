@@ -26,6 +26,7 @@ export const createTask = (taskData) => async (dispatch, getState) => {
 
 export const editTask = (id, taskData) => async (dispatch, getState) => {
   const { taskList } = getState().tasks;
+  console.log("editTask taskList", taskList);
   const updateStatus = taskList.map((task) => {
     if (task.id === id) {
       return { ...task, title: taskData.title, round: taskData.round };
@@ -33,9 +34,12 @@ export const editTask = (id, taskData) => async (dispatch, getState) => {
       return { ...task };
     }
   });
-  const response = await fetchfirebase.put("/podomoro.json", {
+  console.log("updateStatus", updateStatus);
+  const response = await fetchfirebase.patch("/podomoro.json", {
     ...updateStatus,
   });
+  console.log("response", response);
+
   dispatch({ type: EDIT_TASK, payload: response.data });
   history.push("/tasklist/todo");
 };
