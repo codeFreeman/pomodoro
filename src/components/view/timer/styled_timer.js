@@ -12,6 +12,7 @@ export const TitleStyle = styled.div`
 `;
 
 export const CountTomatoWrapper = styled.div`
-  margin-top: 8px;
-  text-align: center;
+  display: flex;
+  margin: 8px 0 0 0;
+  justify-content: center;
 `;

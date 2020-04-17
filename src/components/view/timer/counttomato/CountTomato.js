@@ -5,7 +5,9 @@ import RoundTomato from "./RoundTomato";
 const CountTomato = ({ round, currentRound }) => {
   return (
     <CountTomatoWrapper>
-      {currentRound}/{round}
+      <RoundTomato />
+      <RoundTomato />
+      <RoundTomato />
       <RoundTomato />
     </CountTomatoWrapper>
   );
