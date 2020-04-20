@@ -1,7 +1,7 @@
 import React from "react";
+import "../styles.css";
 import { Box } from "@material-ui/core";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
 import { easeLinear } from "d3-ease";
 import AnimatedProgressProvider from "../../../utils/AnimatedProgressProvider";
 
@@ -9,13 +9,12 @@ import AnimatedProgressProvider from "../../../utils/AnimatedProgressProvider";
 
 const RoundTomato = () => {
   return (
-    <Box width="100px" height="100px" display="flex" margin="0 4px">
+    <Box width="12px" height="12px" display="flex" margin="0 4px">
       <AnimatedProgressProvider
         valueStart={0}
         valueEnd={66}
         duration={0}
-        easingFunction={easeLinear}
-      >
+        easingFunction={easeLinear}>
         {(value) => {
           return (
             <CircularProgressbar
